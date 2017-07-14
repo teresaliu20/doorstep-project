@@ -3,6 +3,10 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const api = require('./backend/routes');
+const mongoose = require('mongoose');
+
+// var connect = process.env.MONGODB_URI || require('./models/connect');
+// mongoose.connect(connect);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
