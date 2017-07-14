@@ -1,12 +1,19 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import Title from '../components/Title';
+import Navbar from '../components/Navbar';
+import Neighbors from '../components/Neighbors';
+import Marketplace from '../components/Marketplace';
+import Requests from '../components/Requests';
 
 const AppContainer = ({ name }) => {
     return (
         <div>
-            <Title name={name} />
+            <Navbar />
+            <Neighbors />
+            <Marketplace />
+            <Requests />
+            <h1>Hello!</h1>
         </div>
     );
 };
