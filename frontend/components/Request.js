@@ -5,6 +5,7 @@ import {
   Button,
 } from 'react-bootstrap';
 import styles from '../assets/stylesheets/request.scss';
+import users from '../users.js';
 
 
 class Request extends React.Component {
@@ -26,10 +27,21 @@ class Request extends React.Component {
     render() {
         return (
         <div className="request">
-          <li onClick={this.open}>
-            <h4>Request from: {this.props.request.name}</h4>
-            <p>{this.props.request.text}</p>
-          </li>
+            <div onClick={this.open}>
+                {
+                    () => {
+                        const foundUser = users.find((user) => this.props.request.username === user.username);
+                        console.log(foundUser);
+                        return (
+                            <div>
+                                <span><img src={foundUser.imgURL} alt=""/></span>
+                                <div>{this.props.request.text}</div>
+                                <div>{foundUser.fName} {foundUser.lName}</div>
+                            </div>
+                        );
+                    }
+                }
+            </div>
           <Modal
             show={this.open}
             onHide={this.close}>
