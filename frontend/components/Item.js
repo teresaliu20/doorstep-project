@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styles from '../assets/stylesheets/item.scss';
 
 const Item = ({item}) => {
     return(
-      <li>
+      <li className="item">
         <div>
           <img alt={item.name} src={item.url}/>
           image goes here
