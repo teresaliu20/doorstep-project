@@ -18,7 +18,12 @@ class Request extends React.Component {
             showModal: false,
             response: ''
         };
+        this.findUser = this.findUser.bind(this);
         this.handleResponseChange = this.handleResponseChange.bind(this);
+    }
+
+    findUser(username) {
+        return users.find((user) => username === user.username);
     }
 
     close() {
@@ -37,42 +42,34 @@ class Request extends React.Component {
         return (
         <div className="request">
             <div onClick={this.open}>
-                {
-                    () => {
-                        const foundUser = users.find((user) => this.props.request.username === user.username);
-                        console.log(foundUser);
-                        return (
-                            <div>
-                                <span><img src={foundUser.imgURL} alt=""/></span>
-                                <div>{this.props.request.text}</div>
-                                <div>{foundUser.fName} {foundUser.lName}</div>
-                            </div>
-                        );
-                    }
-                }
+                <div>
+                    <span><img src={this.findUser(this.props.request.username).imgURL} height="40" alt=""/></span>
+                    <div>{this.props.request.text}</div>
+                    <div>{this.findUser(this.props.request.username).fName} {this.findUser(this.props.request.username).lName}</div>
+                </div>
             </div>
             <Modal show={this.state.showModal} onHide={this.close}>
-          <Modal.Header closeButton>
-            <Modal.Title>Help a neighbor out</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <form>
-              <FormGroup
-                controlId="formBasicText">
-                <ControlLabel>Response to this request</ControlLabel>
-                <FormControl
-                  type="text"
-                  value={this.state.response}
-                  placeholder="They need that one thing. Do you have that one thing?"
-                  onChange={(event) => this.handleResponseChange(event)}
-                />
-              </FormGroup>
-            </form>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button bsStyle="primary" onClick={() => this.handleOnSubmit()}>Save</Button>
-          </Modal.Footer>
-        </Modal>
+              <Modal.Header closeButton>
+                <Modal.Title>Help a neighbor out</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <form>
+                  <FormGroup
+                    controlId="formBasicText">
+                    <ControlLabel>Response to this request</ControlLabel>
+                    <FormControl
+                      type="text"
+                      value={this.state.response}
+                      placeholder="They need that one thing. Do you have that one thing?"
+                      onChange={(event) => this.handleResponseChange(event)}
+                    />
+                  </FormGroup>
+                </form>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button bsStyle="primary" onClick={this.props.handleResponse}>Save</Button>
+              </Modal.Footer>
+          </Modal>
           {/* <Modal
             show={this.open}
             onHide={this.close}>
@@ -97,8 +94,7 @@ class Request extends React.Component {
 
 Request.propTypes = {
     request: PropTypes.object,
-    onRequestClick: PropTypes.func,
+    handleResponse: PropTypes.func,
 };
-
 
 export default Request;

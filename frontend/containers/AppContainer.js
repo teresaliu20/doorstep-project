@@ -7,14 +7,14 @@ import Marketplace from '../components/Marketplace';
 import Requests from '../components/Requests';
 import mainContainer from '../assets/stylesheets/mainContainer.scss';
 
-const AppContainer = ({ name }) => {
+const AppContainer = ({ name, onResponseClick }) => {
     return (
         <div>
             <Navbar />
             <div className="main-container">
                 <Neighbors />
                 <Marketplace />
-                <Requests />
+                <Requests onResponseClick={onResponseClick}/>
             </div>
         </div>
     );
@@ -22,6 +22,7 @@ const AppContainer = ({ name }) => {
 
 AppContainer.propTypes = {
     name: PropTypes.string,
+    onResponseClick: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
@@ -30,8 +31,10 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = (/* dispatch */) => {
+const mapDispatchToProps = (dispatch) => {
+  //  someDispProp: /* some function that dispatches an action */
     return {
+        onResponseClick: () => dispatch({type: 'RESPONSE_TO_REQUEST'})
     };
 };
 
