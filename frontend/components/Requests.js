@@ -8,14 +8,14 @@ const Requests = ({onRequestClick}) => {
     return (
       <div className="requests">
         <ul>
-            {/* {
+            {
                 requests.map((request, index) =>
                 <Request
                     request={request}
                     key={index}
                     onRequestClick={onRequestClick}
                 />)
-            } */}
+            }
       </ul>
       </div>
     );
@@ -24,5 +24,6 @@ const Requests = ({onRequestClick}) => {
 Requests.propTypes = {
     onRequestClick: PropTypes.func
 };
+
 
 export default Requests;

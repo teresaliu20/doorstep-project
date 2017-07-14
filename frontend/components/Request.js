@@ -46,7 +46,7 @@ class Request extends React.Component {
             show={this.open}
             onHide={this.close}>
             <Modal.Header closeButton>
-              <Modal.Title>Request from {this.props.request.name}</Modal.Title>
+              <Modal.Title>Help a neighbor out</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <h5>Knock knock!</h5>
