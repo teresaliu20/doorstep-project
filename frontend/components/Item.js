@@ -8,7 +8,6 @@ const Item = ({item}) => {
       <li className="item">
         <div>
           <img alt={item.name} src={item.url}/>
-          image goes here
         </div>
         <div> description, item name, poster name go here</div>
       </li>
