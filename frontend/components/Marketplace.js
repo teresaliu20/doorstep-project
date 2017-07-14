@@ -5,7 +5,7 @@ import styles from '../assets/stylesheets/marketplace.scss';
 
 const Marketplace = ({items}) => {
     return (
-      <div className="marketplace-div">
+      <div className="marketplace">
         <h3>Items</h3>
         <ul>
           {/* {

@@ -1,5 +1,7 @@
-.requests{
-  border-radius: 3px;
-  border: 1px solid #0FC605;
-  background-color: #79EA73
+@import "flexbox";
+@import "colors";
+
+.neighbors {
+    @include flex(1);
+    background-color: yellow;
 }

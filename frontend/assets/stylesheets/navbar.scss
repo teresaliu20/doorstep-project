@@ -2,6 +2,7 @@
 @import "colors";
 
 .navbar {
+    height: 10vh;
     padding: 10px;
     color: white;
     background-color: $dark_green;
@@ -12,28 +13,22 @@
     @include justify-content(center);
     @include align-items(center);
     h1 {
-        flex: 5;
+        text-align: center;
+        @include flex(5);
     }
-    .dashboard-button {
-        flex: 1;
-        border-radius: 5px;
-        background-color: white;
-        color: black;
-        border: none;
-        height: 45px;
-        margin: 10px;
+    div {
+        @include flex(1);
     }
     .profile-button {
-        flex: 1;
         border-radius: 5px;
         background-color: yellow;
         color: black;
         border: none;
         height: 45px;
-        margin: 0px 10px;
+        display: inline;
     }
     img {
-        flex: 1;
+        @include flex(1);
         height: 50px;
     }
 }

@@ -9,7 +9,6 @@ const Navbar = () => {
             <img src="https://image.flaticon.com/icons/png/512/343/343647.png"/>
             <h1>Doorstep</h1>
             <div>
-              <button className="dashboard-button">Dashboard</button>
               <button className="profile-button">Profile</button>
             </div>
         </div>
