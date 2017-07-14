@@ -4,7 +4,8 @@
 .marketplace {
     @include flex(4);
     height: 100%;
-    background-color: green;
+    background-color: #F7FFF6;
+    list-style: none;
 }
 
 .marketplace ul{
