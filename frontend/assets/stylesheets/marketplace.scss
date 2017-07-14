@@ -4,4 +4,5 @@
 .marketplace {
     @include flex(3);
     background-color: green;
+    list-style: none;
 }

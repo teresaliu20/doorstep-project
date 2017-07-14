@@ -9,7 +9,10 @@ const Item = ({item}) => {
         <div>
           <img alt={item.name} src={item.url}/>
         </div>
-        <div> description, item name, poster name go here</div>
+        <div>
+          <h5>{item.name}</h5>
+          <p>From {item.username}</p>
+        </div>
       </li>
     );
 };
