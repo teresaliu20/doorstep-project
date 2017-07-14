@@ -27,7 +27,7 @@ class Item extends React.Component {
 
     render() {
         return(
-          <li className="item">
+          <li className="item" onClick={this.open}>
             <Card style={{width: '350px'}}>
               {/* <CardTitle
                 title={item.name}
@@ -47,7 +47,7 @@ class Item extends React.Component {
               </CardActions> */}
             </Card>
               <Modal
-                show={this.state.}
+                show={this.state.showModal}
                 onHide={this.close}>
                 <Modal.Header closeButton>
                   <Modal.Title>Knock knock!</Modal.Title>
@@ -63,7 +63,7 @@ class Item extends React.Component {
                 </Modal.Footer>
               </Modal>
           </li>
-      );
+        );
     }
 }
 
