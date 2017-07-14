@@ -9,7 +9,6 @@ import Requests from '../components/Requests';
 const AppContainer = ({ name }) => {
     return (
         <div>
-          <h1>Doorstep!</h1>
             <Navbar />
             <Neighbors />
             <Marketplace />
