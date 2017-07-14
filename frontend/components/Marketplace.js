@@ -1,14 +1,28 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
+import Item from './Item';
+
+import styles from '../assets/stylesheets/marketplace.scss';
+import items from '../items';
 
 const Marketplace = () => {
     return (
-        <h1>Insert Stuff here</h1>
+      <div className="marketplace-div">
+        <h3>Items</h3>
+        <ul>
+          {
+            items.map((item, index) =>
+            <Item item={item}
+              key={index}
+            />)
+          }
+        </ul>
+      </div>
     );
 };
 
-// Title.propTypes = {
-//     name: PropTypes.string,
+// Marketplace.propTypes = {
+//     items: PropTypes.array,
 // };
 
 export default Marketplace;

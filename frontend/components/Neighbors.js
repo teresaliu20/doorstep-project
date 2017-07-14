@@ -5,8 +5,7 @@ import users from '../users';
 
 const Neighbors = ({}) => {
     return (
-        <div>
-            <h1>Neighbors</h1>
+        <div className="neighbors-div">
          {
              users.map(user =>
                  <Neighbor user={user}/>

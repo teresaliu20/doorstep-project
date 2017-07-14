@@ -1,0 +1,7 @@
+@import "flexbox";
+@import "colors";
+
+.main-container {
+    background-color: blue;
+    @include flexbox();
+}

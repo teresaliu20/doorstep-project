@@ -5,14 +5,17 @@ import Navbar from '../components/Navbar';
 import Neighbors from '../components/Neighbors';
 import Marketplace from '../components/Marketplace';
 import Requests from '../components/Requests';
+import mainContainer from '../assets/stylesheets/mainContainer.scss';
 
 const AppContainer = ({ name }) => {
     return (
         <div>
             <Navbar />
-            <Neighbors />
-            <Marketplace />
-            <Requests />
+            <div className="main-container">
+                <Neighbors />
+                <Marketplace />
+                <Requests />
+            </div>
         </div>
     );
 };
