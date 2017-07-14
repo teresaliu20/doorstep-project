@@ -5,9 +5,8 @@
     height: 10vh;
     padding: 10px;
     color: white;
-    background-color: $dark_green;
+    background-color: #3D9348;
     border-radius: 0px;
-    font: $font-stack;
     margin: 0;
     @include flexbox();
     @include justify-content(center);
@@ -21,7 +20,8 @@
     }
     .profile-button {
         border-radius: 5px;
-        background-color: yellow;
+        background-color: white;
+        width: 75px;
         color: black;
         border: none;
         height: 45px;
