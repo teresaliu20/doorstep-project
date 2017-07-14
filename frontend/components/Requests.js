@@ -9,14 +9,14 @@ const Requests = ({onRequestClick}) => {
       <div className="requests">
       <h1>here!</h1>
         <ul>
-            {/* {
+            {
                 requests.map((request, index) =>
                 <Request
                     request={request}
                     key={index}
-                    onRequestClick={onRequestClick}
+                    // onRequestClick={onRequestClick}
                 />)
-            } */}
+            }
       </ul>
       </div>
     );
