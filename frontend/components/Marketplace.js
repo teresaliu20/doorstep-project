@@ -7,7 +7,7 @@ import items from '../items';
 
 const Marketplace = () => {
     return (
-      <div className="marketplace-div">
+      <div className="marketplace">
         <h3>Items</h3>
         <ul>
           {
