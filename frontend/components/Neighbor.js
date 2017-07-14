@@ -5,10 +5,10 @@ import { Button } from 'react-bootstrap';
 
 const Neighbor = ({user}) => {
     return (
-        <button className="neighbor">
+        <div className="neighbor">
             <span><img src={user.imgURL} alt="" height="40"/></span>
             <span>{user.fName} {user.lName}</span>
-        </button>
+        </div>
     );
 };
 
