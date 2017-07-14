@@ -1,15 +1,25 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import Request from './Request';
+import PropTypes from 'prop-types';
 
-const Requests = () => {
+const Requests = ({requests, onRequestClick}) => {
     return (
-        <h1>Insert Stuff here</h1>
+      <ul>
+        {
+          requests.map((request, index) => <Request
+            request={request}
+            key={index}
+            onRequestClick={onRequestClick}
+          />)
+        }
+      </ul>
     );
 };
 
-// Title.propTypes = {
-//     name: PropTypes.string,
-// };
+Requests.propTypes = {
+    requests: PropTypes.array,
+    onRequestClick: PropTypes.func
+};
 
 
 export default Requests;
