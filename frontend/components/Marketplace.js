@@ -14,6 +14,7 @@ const Marketplace = () => {
             items.map((item, index) =>
             <Item item={item}
               key={index}
+              // onItemClick={onItemClick}
             />)
           }
         </ul>

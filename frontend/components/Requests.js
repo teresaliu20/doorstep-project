@@ -4,26 +4,24 @@ import PropTypes from 'prop-types';
 import styles from '../assets/stylesheets/requests.scss';
 import requests from '../requests.js';
 
-const Requests = ({onRequestClick}) => {
+const Requests = ({onResponseClick}) => {
+    console.log(requests);
     return (
       <div className="requests">
-      <h1>here!</h1>
-        <ul>
-            {/* {
+            {
                 requests.map((request, index) =>
                 <Request
                     request={request}
                     key={index}
-                    onRequestClick={onRequestClick}
+                    handleResponse={onResponseClick}
                 />)
-            } */}
-      </ul>
+            }
       </div>
     );
 };
 
 Requests.propTypes = {
-    onRequestClick: PropTypes.func
+    onResponseClick: PropTypes.func
 };
 
 export default Requests;
