@@ -9,11 +9,11 @@ import Requests from '../components/Requests';
 const AppContainer = ({ name }) => {
     return (
         <div>
+          <h1>Doorstep!</h1>
             <Navbar />
             <Neighbors />
             <Marketplace />
             <Requests />
-            <h1>Hello!</h1>
         </div>
     );
 };
