@@ -1,8 +1,7 @@
-function rootReducer(state = {name: 'Horizons'}, action) {
-    switch (action.type) {
-        default:
-            return state;
-    }
-}
+import { combineReducers } from 'redux'
 
-export default rootReducer;
+const rootReducer = combineReducers({
+  // stateName: reducerName
+})
+
+export default rootReducer
