@@ -4,6 +4,8 @@ import {
   Modal,
   Button,
 } from 'react-bootstrap';
+import styles from '../assets/stylesheets/request.scss';
+
 
 class Request extends React.Component {
     constructor(props) {
@@ -23,8 +25,8 @@ class Request extends React.Component {
 
     render() {
         return (
-        <div>
-          <li onClick={this.props.onRequestClick}>
+        <div className="request">
+          <li onClick={this.open}>
             <h4>Request from: {this.props.request.name}</h4>
             <p>{this.props.request.text}</p>
           </li>
@@ -37,7 +39,9 @@ class Request extends React.Component {
             <Modal.Body>
               <h5>Knock knock!</h5>
               <p>{this.props.request.text}</p>
-              <Button>Fill this request!</Button>
+              <Button onClick={this.props.onRequestClick(this.props.request.name, this.props.request.email)}>
+                Fill this request!
+              </Button>
             </Modal.Body>
             <Modal.Footer>
               <Button onClick={this.close}>Close</Button>
