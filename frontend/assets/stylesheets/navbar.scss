@@ -1,8 +1,14 @@
+@import "flexbox";
+
 .navbar {
-    h1 {
-        color: red;
-    }
-    h3 {
-        color: blue;
+    height: 75px;
+    color: white;
+    background-color: black;
+    border-radius: 0px;
+    @include flexbox();
+    @include justify-content(center);
+
+    button {
+
     }
 }
