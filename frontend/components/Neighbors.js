@@ -1,9 +1,10 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import Neighbor from './Neighbor';
 
 const Neighbors = () => {
     return (
-        <h1>Insert Stuff here</h1>
+        <Neighbor />
     );
 };
 
