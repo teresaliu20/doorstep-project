@@ -1,15 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Item = ({}) => {
+
+const Item = ({item}) => {
     return(
-      <div>
+      <li>
         <div>
-          <img />
+          <img alt={item.name} src={item.url}/>
           image goes here
         </div>
         <div> description, item name, poster name go here</div>
-      </div>
-    )
+      </li>
+    );
+};
+
+Item.propTypes = {
+    item: PropTypes.object,
 };
 
 export default Item;
