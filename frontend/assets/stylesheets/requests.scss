@@ -1,7 +1,8 @@
 @import "flexbox";
 @import "colors";
 
-.neighbors {
+.requests {
     @include flex(1);
-    background-color: yellow;
+    height: 100%;
+    background-color: red;
 }

@@ -3,5 +3,7 @@
 
 .neighbors {
     @include flex(1);
-    background-color: blue;
+    height: 100%;
+    background-color: yellow;
+    color: blue;
 }
