@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Neighbor from './Neighbor';
 import users from '../users';
+import styles from '../assets/stylesheets/neighbors.scss';
 
 const Neighbors = ({}) => {
     return (
