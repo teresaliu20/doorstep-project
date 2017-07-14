@@ -5,13 +5,13 @@ import PropTypes from 'prop-types';
 const Requests = ({requests, onRequestClick}) => {
     return (
       <ul>
-        {
+        {/* {
           requests.map((request, index) => <Request
             request={request}
             key={index}
             onRequestClick={onRequestClick}
           />)
-        }
+        } */}
       </ul>
     );
 };
