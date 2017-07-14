@@ -7,10 +7,15 @@
     background-color: $dark_green;
     border-radius: 0px;
     font: $font-stack;
+    margin: 0;
     @include flexbox();
-    @include justify-content(space-between);
-    @include align-items(center)
+    @include justify-content(center);
+    @include align-items(center);
+    h1 {
+        flex: 5;
+    }
     .dashboard-button {
+        flex: 1;
         border-radius: 5px;
         background-color: white;
         color: black;
@@ -19,6 +24,7 @@
         margin: 10px;
     }
     .profile-button {
+        flex: 1;
         border-radius: 5px;
         background-color: yellow;
         color: black;
@@ -27,6 +33,7 @@
         margin: 0px 10px;
     }
     img {
+        flex: 1;
         height: 50px;
     }
 }
