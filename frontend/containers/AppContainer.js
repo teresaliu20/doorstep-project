@@ -22,19 +22,21 @@ const AppContainer = ({ name, onResponseClick }) => {
 
 AppContainer.propTypes = {
     name: PropTypes.string,
+    responses: PropTypes.array,
     onResponseClick: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
     return {
-        name: state.name
+        name: state.name,
+        responses: state.responses
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
   //  someDispProp: /* some function that dispatches an action */
     return {
-        onResponseClick: () => dispatch({type: 'RESPONSE_TO_REQUEST'})
+        onResponseClick: (receiver, response) => dispatch({type: 'RESPONSE_TO_REQUEST', receiver, response})
     };
 };
 

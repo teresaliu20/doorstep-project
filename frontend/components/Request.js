@@ -22,6 +22,7 @@ class Request extends React.Component {
         this.close = this.close.bind(this);
         this.open = this.open.bind(this);
         this.handleResponseChange = this.handleResponseChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     findUser(username) {
@@ -37,7 +38,12 @@ class Request extends React.Component {
     }
 
     handleResponseChange(event) {
-        this.setState({ reponse: event.target.value });
+        this.setState({ response: event.target.value });
+    }
+
+    handleSubmit() {
+        this.close();
+        this.props.handleResponse(this.props.request.username, this.state.response);
     }
 
     render() {
@@ -69,26 +75,9 @@ class Request extends React.Component {
                 </form>
               </Modal.Body>
               <Modal.Footer>
-                <Button bsStyle="primary" onClick={this.props.handleResponse}>Save</Button>
+                <Button bsStyle="primary" onClick={() => this.handleSubmit()}>Send them a response</Button>
               </Modal.Footer>
           </Modal>
-          {/* <Modal
-            show={this.open}
-            onHide={this.close}>
-            <Modal.Header closeButton>
-              <Modal.Title>Help a neighbor out</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <h5>Knock knock!</h5>
-              <p>{this.props.request.text}</p>
-              <Button onClick={this.props.onRequestClick(this.props.request.name, this.props.request.email)}>
-                Fill this request!
-              </Button>
-            </Modal.Body>
-            <Modal.Footer>
-              <Button onClick={this.close}>Close</Button>
-            </Modal.Footer>
-          </Modal> */}
         </div>
         );
     }
