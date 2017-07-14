@@ -13,6 +13,8 @@ class Item extends React.Component {
         this.state = {
             showModal: false,
         };
+        this.close = this.close.bind(this);
+        this.open = this.open.bind(this);
     }
 
     close() {
@@ -45,7 +47,7 @@ class Item extends React.Component {
               </CardActions> */}
             </Card>
               <Modal
-                show={this.open}
+                show={this.state.}
                 onHide={this.close}>
                 <Modal.Header closeButton>
                   <Modal.Title>Knock knock!</Modal.Title>

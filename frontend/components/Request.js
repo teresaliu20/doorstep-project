@@ -19,6 +19,8 @@ class Request extends React.Component {
             response: ''
         };
         this.findUser = this.findUser.bind(this);
+        this.close = this.close.bind(this);
+        this.open = this.open.bind(this);
         this.handleResponseChange = this.handleResponseChange.bind(this);
     }
 
