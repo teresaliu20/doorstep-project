@@ -13,14 +13,14 @@ class AppContainer extends React.Component {
         return (
           <BrowserRouter>
             {/* <h5><Link to="/community/59697d037f49969cba8f2df3">GF Community</Link></h5> */}
-            <div>
+            <Switch>
+                <Route exact={true} path="/profile/:userId" component={Profile}/>
               <Route exact={true} path="/communities" component={Dashboard}/>
-              <Route path="/" component={CommunityPage}/>
-              <Route path="/profile" component={Profile}/>
+              <Route exact={true} path="/" component={CommunityPage}/>
 
               {/* this route will catch anything without a path */}
               <Route render={() => <h1>404, Sorry fam.</h1>} />
-            </div>
+            </Switch>
           </BrowserRouter>
         );
     }

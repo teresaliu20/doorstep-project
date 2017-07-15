@@ -15,7 +15,8 @@ class Profile extends React.Component {
         };
     }
     componentDidMount() {
-        fetch('http://localhost:3000/api/profile/' + this.props.match.params.id, {
+        console.log('MATCH', this.props);
+        fetch('http://localhost:3000/api/profile/' + this.props.match.params.userId, {
             method: 'GET',
             headers: {
                 "Content-Type": "text/html"
@@ -25,10 +26,10 @@ class Profile extends React.Component {
         .then((responseJson) => {
             console.log('json', responseJson);
             this.setState({
-                username: responseJson.username,
-                fName: responseJson.fName,
-                lName: responseJson.lName,
-                imgURL: responseJson.imgURL,
+                username: responseJson.user.username,
+                fName: responseJson.user.fName,
+                lName: responseJson.user.lName,
+                imgURL: responseJson.user.imgURL,
             });
             return;
         })
@@ -54,7 +55,7 @@ class Profile extends React.Component {
 }
 
 Profile.propTypes = {
-    match: PropTypes.object
+    match: PropTypes.shape
     // responses: PropTypes.array,
     // onResponseClick: PropTypes.func
 };
