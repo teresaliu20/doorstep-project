@@ -17,14 +17,21 @@ router.get('/community/:id', (req, res) => {
     .then((community) => {
         if (!community) {
             console.log("Community does not exist");
+            return res.json({failure: "database error"});
         }
         else {
             // Send the community json object
-            console.log("Successfully sent community data");
-            res.json(community);
-            return;
+            Item.populate(community.items, {path: 'owner'})
+            .then((result) => {
+
+                Request.populate(community.requests, {path: 'owner'})
+                .then((result) => {
+                    return res.json(community);
+                }); 
+            });
         }
     })
+
     .catch(err => {
         console.log(err);
         res.json({failure: "database error"});
@@ -73,7 +80,7 @@ router.post('/create-item', (req, res) => {
     var newItem = new Item({
         name: req.body.name,
         imgURL: req.body.imgURL,
-        owner: req.body.ownerId
+        owner: req.body.owner
     });
 
     // Save the new item to the Item section in database
@@ -102,11 +109,13 @@ router.post('/create-item', (req, res) => {
 // Create a new request within the community, update both the community and the request section of database
 router.post('/new-request', (req, res) => {
 
+    console.log("BODY", req.body);
+
     var communityId = req.body.communityId;
 
     // Create the new request from the model
     var newRequest = new Request({
-        owner: req.body.ownerId,
+        owner: req.body.owner,
         text: req.body.text
     });
 
