@@ -52,9 +52,11 @@ class Request extends React.Component {
         <div className="request">
             <div onClick={this.open}>
                 <div>
-                    <span><img src={this.props.request.owner.imgURL} height="40" alt=""/></span>
-                    <div>{this.props.request.text}</div>
-                    <div>{this.props.request.owner.fName} {this.props.request.owner.lName}</div>
+                    <img src={this.props.request.owner.imgURL} height="40" alt=""/>
+                    <div className="request-info">
+                    <div className="request-text">{this.props.request.text}</div>
+                    <div className="request-name">{this.props.request.owner.fName} {this.props.request.owner.lName}</div>
+                    </div>
                 </div>
             </div>
             <Modal show={this.state.showModal} onHide={this.close}>
