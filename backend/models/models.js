@@ -50,7 +50,12 @@ var communitySchema = mongoose.Schema({
     }],
     items: [{
         type: mongoose.Schema.ObjectId,
-    }]
+        ref: 'Item'
+    }],
+    requests: [{
+        type: mongoose.Schema.ObjectId,
+        ref: 'Request'
+    }],
 });
 
 var requestSchema = mongoose.Schema({
