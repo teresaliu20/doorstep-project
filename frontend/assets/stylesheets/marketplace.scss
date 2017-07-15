@@ -5,6 +5,7 @@
     overflow: scroll;
     @include flex(4);
     height: 100%;
+    width: 100%;
     background-color: white;
     list-style: none;
     .add-item-button {
@@ -16,8 +17,24 @@
         font-weight: bold;
         text-align: center;
     }
-}
+    .item-div {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        float: left;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 300px;
+        margin: 20px;
+        background-color: white;
+        img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
 
-.marketplace ul{
-  list-style: none;
+        }
+        .item-info {
+            padding: 10px;
+        }
+    }
+
 }

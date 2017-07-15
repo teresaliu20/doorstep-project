@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, CardMedia, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
 import { Modal, Button } from 'react-bootstrap';
 // import { Button } from 'react-toolbox/lib/button';
 
@@ -28,24 +27,13 @@ class Item extends React.Component {
     render() {
         return(
           <li className="item" onClick={this.open}>
-            <Card style={{width: '350px'}}>
-              {/* <CardTitle
-                title={item.name}
-              /> */}
-              <CardMedia
-                aspectRatio="wide"
-                // image={item.url}
-                >
-                  <img src={this.props.item.imgURL} alt={this.props.item.name}/>
-              </CardMedia>
-              <CardTitle
-                  title={this.props.item.name}
-                  subtitle={"Posted by " + this.props.item.owner.fName + " " + this.props.item.owner.lName}/>
-              {/* <CardActions theme={theme}>
-                <Button label="Action 1" />
-                <Button label="Action 2" />
-              </CardActions> */}
-            </Card>
+            <div className="item-div">
+              <img src={this.props.item.imgURL} alt={this.props.item.name}/>
+              <div className="item-info">
+                <h3>{this.props.item.name}</h3>
+                <h4>{"Giver: " + this.props.item.owner.fName + " " + this.props.item.owner.lName}</h4>
+              </div>
+            </div>
               <Modal
                 show={this.state.showModal}
                 onHide={this.close}>
