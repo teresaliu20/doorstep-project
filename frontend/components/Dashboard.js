@@ -2,19 +2,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Navbar from '../components/Navbar';
+import EachCommunity from './EachCommunity';
 
-class Profile extends React.Component {
+class Dashboard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
-            fName: '',
-            lName: '',
-            imgURL: '',
+            communities: []
         };
     }
     componentDidMount() {
-        fetch('http://localhost:3000/api/profile/' + '59695a86f36d28739db80b8a', {
+        fetch('http://localhost:3000/api/communities/', {
             method: 'GET',
             headers: {
                 "Content-Type": "text/html"
@@ -24,10 +22,7 @@ class Profile extends React.Component {
         .then((responseJson) => {
             console.log('json', responseJson);
             this.setState({
-                username: responseJson.username,
-                fName: responseJson.fName,
-                lName: responseJson.lName,
-                imgURL: responseJson.imgURL,
+                communities: responseJson
             });
             return;
         })
@@ -41,18 +36,18 @@ class Profile extends React.Component {
             <div>
                 <Navbar />
                 <div className="">
-                  <h2>{this.state.username}</h2>
-                  <img src={this.state.imgURL} alt={this.state.username}/>
-                  <div>
-                    <h4>Communities {this.state.fName} is a part of:</h4>
-                  </div>
+                  <ul>
+                    {this.state.communities.map((community, index) => {
+                        <EachCommunity community={community} key={index}/>
+                    })}
+                  </ul>
                 </div>
             </div>
         );
     }
 }
 
-Profile.propTypes = {
+Dashboard.propTypes = {
     // responses: PropTypes.array,
     // onResponseClick: PropTypes.func
 };
@@ -73,4 +68,4 @@ const mapDispatchToProps = (/* dispatch */) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Profile);
+)(Dashboard);
