@@ -2,17 +2,21 @@
 @import "colors";
 
 .navbar {
-    height: 6vh;
+    height: 8vh;
     color: white;
     background-color: $salmon;
     border-radius: 0px;
     margin: 0;
-    padding: 5px;
-    @include flexbox();
-    @include justify-content(space-between);
-    @include align-items(center);
+    padding: 10px;
+    position: relative;
+    text-align: center;
     h1 {
         text-align: center;
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-block;
     }
     .profile-button {
         border-radius: 5px;
@@ -22,8 +26,10 @@
         border: none;
         padding: 15px;
         display: inline-block;
-        float: right;
         margin: 0px 20px;
+        position: absolute;
+        right: 110px;
+        top: 10px;
     }
     .dashboard-button {
         border-radius: 5px;
@@ -33,9 +39,13 @@
         border: none;
         padding: 15px;
         display: inline-block;
-        float: right;
+        position: absolute;
+        right: 10px;
+        top: 10px;
     }
     img {
+        float: left;
         height: 50px;
+        margin-left: 10px;
     }
 }
