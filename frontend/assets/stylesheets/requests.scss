@@ -6,10 +6,10 @@
     @include flex-direction(column);
     @include align-items(center);
 
+    width: 25%;
+    border: 1px solid black;
     overflow: scroll;
-    @include flex(1);
     height: 100%;
-    width: 100%;
     background-color: $beige;
     text-align: center;
     padding: 10px;

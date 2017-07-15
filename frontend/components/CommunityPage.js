@@ -51,9 +51,11 @@ class CommunityPage extends React.Component {
             <div>
                 <Navbar />
                 <div className="main-container">
-                    <Neighbors users={this.state.users} community={this.state.community}/>
-                    <Marketplace items={this.state.items}/>
-                    <Requests requests={this.state.requests} onResponseClick={this.props.onResponseClick}/>
+                    <Neighbors users={this.state.users} community={this.state.community} />
+                    <div className="flex">
+                        <Marketplace items={this.state.items}/>
+                        <Requests requests={this.state.requests} onResponseClick={this.props.onResponseClick}/>
+                    </div>
                 </div>
             </div>
         );

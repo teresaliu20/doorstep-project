@@ -12,7 +12,7 @@ class Navbar extends React.Component {
                 <h1>Doorstep</h1>
                 <div>
                   <button className="profile-button">Profile</button>
-                  <Link className="profile-button" to="/communities">View all communities</Link>
+                  <Link className="dashboard-button" to="/communities">Dashboard</Link>
                 </div>
             </div>
         );

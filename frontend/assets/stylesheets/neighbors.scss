@@ -2,24 +2,22 @@
 @import "colors";
 
 .neighbors {
-  overflow: scroll;
-  @include flex(3);
+  float: left;
   height: 100%;
-  width: 200px;
-  text-align: center;
+  min-width: 300px;
+  width: 20%;
+  position: relative;
   .side-bar {
     float: left;
     height: 100%;
-    width: 70px;
+    width: 20%;
     background-color: $darkest-blue;
   }
   .neighbors-bar {
-    @include flexbox();
-    @include flex-direction(column);
-    @include align-items(center);
-  
-    float: left;
+    display: inline-block;
+    text-align: center;
     height: 100%;
+    width: 80%;
     background: $darker-blue; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(bottom, $gradient-dark , $gradient-light); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(top, $gradient-dark, $gradient-light); /* For Opera 11.1 to 12.0 */
@@ -34,7 +32,7 @@
       width: 60px;
       content: "+";
       background-color: $salmon;
-      border-radius: 50%;
+      border-radius: 30px;
       color: white;
     }
   }
