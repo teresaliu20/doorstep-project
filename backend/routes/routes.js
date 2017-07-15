@@ -192,9 +192,8 @@ router.get('/profile/:profileId', (req, res) => {
     .then(userProfile => {
         if (!userProfile) {
             return res.json({failure: "Profile not found!"});
-        } else {
-            return res.json({success: true, user: userProfile});
         }
+        return res.json({success: true, user: userProfile});
     })
     .catch( err =>
         res.json({failure: "database error", error: err })
