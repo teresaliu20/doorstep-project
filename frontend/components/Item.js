@@ -36,11 +36,11 @@ class Item extends React.Component {
                 aspectRatio="wide"
                 // image={item.url}
                 >
-                  <img src={this.props.item.url} alt={this.props.item.name}/>
+                  <img src={this.props.item.owner.imgURL} alt={this.props.item.name}/>
               </CardMedia>
               <CardTitle
                   title={this.props.item.name}
-                  subtitle={"Posted by " + this.props.item.username}/>
+                  subtitle={"Posted by " + this.props.item.owner.username}/>
               {/* <CardActions theme={theme}>
                 <Button label="Action 1" />
                 <Button label="Action 2" />
@@ -53,7 +53,7 @@ class Item extends React.Component {
                   <Modal.Title>Knock knock!</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                  <h5>Want to borrow {this.props.item.name} from {this.props.item.username}?</h5>
+                  <h5>Want to borrow {this.props.item.name} from {this.props.item.owner.username}?</h5>
                   <Button onClick={this.props.onItemClick}>
                     Send them a message!
                   </Button>

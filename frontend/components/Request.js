@@ -43,7 +43,7 @@ class Request extends React.Component {
 
     handleSubmit() {
         this.close();
-        this.props.handleResponse(this.props.request.username, this.state.response);
+        this.props.handleResponse(this.props.request.owner, this.state.response);
     }
 
     render() {
@@ -51,9 +51,9 @@ class Request extends React.Component {
         <div className="request">
             <div onClick={this.open}>
                 <div>
-                    <span><img src={this.findUser(this.props.request.username).imgURL} height="40" alt=""/></span>
+                    <span><img src={this.findUser(this.props.request.owner).imgURL} height="40" alt=""/></span>
                     <div>{this.props.request.text}</div>
-                    <div>{this.findUser(this.props.request.username).fName} {this.findUser(this.props.request.username).lName}</div>
+                    <div>{this.findUser(this.props.request.owner).fName} {this.findUser(this.props.request.owner).lName}</div>
                 </div>
             </div>
             <Modal show={this.state.showModal} onHide={this.close}>
