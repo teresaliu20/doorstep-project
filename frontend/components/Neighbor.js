@@ -8,11 +8,10 @@ import Profile from './Profile';
 class Neighbor extends React.Component {
     render() {
         return (
-            <div className="neighbor">
-                <Link to={'profiles/' + this.props.user._id}/>
+            <a button className="neighbor" href={'profile/' + this.props.user._id}>
                 <span><img src={this.props.user.imgURL} alt="" height="40"/></span>
                 <span>{this.props.user.fName} {this.props.user.lName}</span>
-            </div>
+            </a>
         );
     }
 }

@@ -10,7 +10,7 @@ class Requests extends React.Component {
         return (
           <div className="requests">
             <h2>Requests</h2>
-            <div className="add-request-button">Make a request</div>
+            <a button href="#" className="add-request-button">Make a request</a>
             <div>
                 {
                     this.props.requests.map((request, index) =>
