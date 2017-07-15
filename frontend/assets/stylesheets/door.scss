@@ -7,14 +7,19 @@
   // flex-direction: row;
   // @include flex-flow(row-wrap)
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  width: 150px;
-  height: 250px;
   color: #07080B;
   border-radius: 5px;
   margin: 30px;
-  background-image: linear-gradient(0deg,rgba(10,10,10,0.3),rgba(0,0,0,0.3)),url('/img/door256.png');
   text-align: center;
+  width: 150px;
+  height: 300px;
+  background-image: linear-gradient(0deg,rgba(10,10,10,0.3),rgba(0,0,0,0.3)),url('/img/doorScreen.png');
 
+}
+
+.doorImg {
+  // width: 100%;
+  // height: 100%;
 }
 
 .doorName{
