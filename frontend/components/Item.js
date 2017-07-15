@@ -28,7 +28,7 @@ class Item extends React.Component {
         return(
           <li className="item" onClick={this.open}>
             <div className="item-div">
-              <img src={this.props.item.imgURL} alt={this.props.item.name}/>
+              <div className="img-wrapper"><img src={this.props.item.imgURL} alt={this.props.item.name}/></div>
               <div className="item-info">
                 <h3>{this.props.item.name}</h3>
                 <h4>{"Giver: " + this.props.item.owner.fName + " " + this.props.item.owner.lName}</h4>

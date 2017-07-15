@@ -3,11 +3,14 @@
 
 .marketplace {
     overflow: scroll;
-    @include flex(4);
+    float: left;
     height: 100%;
-    width: 100%;
+    width: 75%;
+    border: 1px solid black;
     background-color: white;
     list-style: none;
+    @include flexbox()
+    @include flex-flow(row-wrap)
     .add-item-button {
         height: 100px;
         width: 80px;
@@ -23,8 +26,7 @@
         position: relative;
         margin: 0;
         padding: 0;
-        width: 300px;
-        margin: 20px;
+        @include flex(1);
         background-color: white;
         img {
             width: 100%;
