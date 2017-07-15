@@ -171,6 +171,7 @@ router.get('/communities', (req, res) => {
     .then((communities) => {
         if (!communities) {
             console.log("No communities exist");
+            return res.json({failure: "community does not exist"})
         }
         else {
             // Send the community json object
@@ -190,9 +191,9 @@ router.get('/profile/:profileId', (req, res) => {
     User.findById(profile)
     .then(userProfile => {
         if (!userProfile) {
-            res.json({failure: "Profile not found!"});
+            return res.json({failure: "Profile not found!"});
         } else {
-            res.json({success: true, user: userProfile});
+            return res.json({success: true, user: userProfile});
         }
     })
     .catch( err =>
