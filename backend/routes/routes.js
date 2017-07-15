@@ -8,15 +8,18 @@ var Request = models.Request;
 
 // Get the community object as data for the community page
 router.get('/community/:id', (req, res) => {
-
+    
+    // Find the community by the given id and populate arrays of Object ids
     Community.findById(req.params.id)
     .populate('users')
     .populate('items')
+    .populate('requests')
     .then((community) => {
         if (!community) {
             console.log("Community does not exist");
         }
         else {
+            // Send the community json object
             console.log("Successfully sent community data");
             return res.json(community);
         }
@@ -33,22 +36,23 @@ router.post('/add-user', (req, res) => {
     var communityId = req.body.communityId;
     var userId = req.body.userId;
 
+    // Find the community by the given id
     Community.findById(communityId)
     .then(community => {
         console.log(community);
 
-        // if the user already exists in the community
+        // If the user already exists in the community
         if (community.users.indexOf(userId) !== -1) {
             console.log("Error: user already exists")
             return res.json({success: true, response: community});
         }
-
+        // Push the user id into the community users array then update in database
         var newUsers = [...community.users];
         newUsers.push(userId);
-        console.log("NEW" + newUsers);
         community.update({users: newUsers})
         .then((result) => {
             community.users = newUsers;   
+            // Send back the community json object with the updated array
             res.json({success: true, response: community})
         })
     })
@@ -63,22 +67,26 @@ router.post('/create-item', (req, res) => {
 
     var communityId = req.body.communityId;
 
+    // Create the new item from the model
     var newItem = new Item({
         name: req.body.name,
         imgURL: req.body.imgURL,
         owner: req.body.ownerId
     });
 
+    // Save the new item to the Item section in database
     newItem.save()
     .then(item => {
         Community.findById(communityId)
         .then(community => {
             var resultItemsArray = [...community.items];
             resultItemsArray.push(item._id);
+            // Push the item id into the community items array then update in database
             community.update({items: resultItemsArray})
             .then(result => {
                 community.items = resultItemsArray;
                 console.log("You created an item in the commmunity!");
+                // Send back the community json object with the updated array
                 return res.json({success: true, response: community});
             });
         });
@@ -89,46 +97,30 @@ router.post('/create-item', (req, res) => {
     });
 });
 
-// Create a new community and post to the database
-router.post('/create-community', (req, res) => {
-
-    var newCommunity = new Community ({
-        name: req.body.name,
-        description: req.body.description,
-        users: [],
-        items: [],
-        requests: []
-    });
-    newCommunity.save((err, community) => {
-        if (err) {
-            res.json({failure: "database error"});
-        }
-        else {
-            res.json({success: true, response: community})
-        }
-    })
-})
-
+// Create a new request within the community, update both the community and the request section of database
 router.post('/new-request', (req, res) => {
 
     var communityId = req.body.communityId;
 
+    // Create the new request from the model
     var newRequest = new Request({
         owner: req.body.ownerId,
         text: req.body.text
     });
 
+    // Save the new request to the Reqest section in database
     newRequest.save()
     .then(request => {
         Community.findById(communityId)
         .then(community => {
             var resultRequestArray = [...community.requests];
             resultRequestArray.push(request._id);
+            // Push the request id into the community requests array then update in database
             community.update({requests: resultRequestArray})
             .then(result => {
-                console.log("HERE@!!!!")
                 community.requests = resultRequestArray;
                 console.log("Request added to database");
+                // Send back the community json object with the updated array
                 return res.json({success: true, response: community});
             })
         });
@@ -139,21 +131,27 @@ router.post('/new-request', (req, res) => {
     });
 })
 
+// Create a new community and post to the database
+router.post('/create-community', (req, res) => {
 
-// Get communities from database
-router.get('/community/:id', (req, res) => {
-    var id = req.params.id;
-});
-
-// // Add new community to the community database
-// router.post('/community/new', (req, res) => {
-
-// })
-
-
-// SAMPLE ROUTE
-router.use('/users', (req, res) => {
-    res.json({ success: true });
-});
+    // Create the new community from the model
+    var newCommunity = new Community ({
+        name: req.body.name,
+        description: req.body.description,
+        users: [],
+        items: [],
+        requests: []
+    });
+    // Save the community to the database
+    newCommunity.save((err, community) => {
+        if (err) {
+            res.json({failure: "database error"});
+        }
+        else {
+            // Send back the newly-created community json object
+            res.json({success: true, response: community})
+        }
+    })
+})
 
 module.exports = router;
