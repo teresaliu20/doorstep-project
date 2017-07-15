@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Navbar from '../components/Navbar';
-import EachCommunity from './EachCommunity';
+import Door from './Door';
 
 class Dashboard extends React.Component {
     constructor(props) {

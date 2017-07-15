@@ -20,7 +20,7 @@ class CommunityPage extends React.Component {
         };
     }
     componentDidMount() {
-        fetch('http://localhost:3000/api/community/' + '59697d037f49969cba8f2df3', {
+        fetch('http://localhost:3000/api/community/' + this.props.match.params.communityId, {
             method: 'GET',
             headers: {
                 "Content-Type": "text/html"
@@ -59,7 +59,8 @@ class CommunityPage extends React.Component {
 
 CommunityPage.propTypes = {
     responses: PropTypes.array,
-    onResponseClick: PropTypes.func
+    onResponseClick: PropTypes.func,
+    match: PropTypes.shape
 };
 
 const mapStateToProps = (state) => {
