@@ -72,7 +72,7 @@ var requestSchema = mongoose.Schema({
         required: true
     },
     text: {
-        type: String
+        type: String,
         required: true
     }
 });
