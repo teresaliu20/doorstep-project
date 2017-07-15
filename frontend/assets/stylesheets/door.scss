@@ -1,0 +1,10 @@
+@import "flexbox";
+
+.door{
+  background-color: white;
+  @include flexbox();
+  display: flex;
+  flex-direction: row;
+  @include flex-flow(row-wrap)
+
+}
