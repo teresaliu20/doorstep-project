@@ -12,7 +12,7 @@ class Requests extends React.Component {
           <div className="requests">
             <h2>Requests</h2>
             <BrowserRouter>
-                <Link to="/" className="add-request-button">&plus</Link>
+                <Link to="/" className="add-request-button"><img src="/img/plus1x.png"/></Link>
             </BrowserRouter>
             <div>
                 {

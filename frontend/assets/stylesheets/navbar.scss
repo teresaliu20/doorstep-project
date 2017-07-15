@@ -7,6 +7,7 @@
     background-color: $salmon;
     border-radius: 0px;
     margin: 0;
+    padding: 5px;
     @include flexbox();
     @include justify-content(space-between);
     @include align-items(center);
