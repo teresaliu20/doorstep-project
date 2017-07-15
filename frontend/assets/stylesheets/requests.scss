@@ -2,6 +2,7 @@
 @import "colors";
 
 .requests {
+    overflow: scroll;
     @include flex(1);
     height: 100%;
     background-color: #DDFFD5;

@@ -2,10 +2,20 @@
 @import "colors";
 
 .marketplace {
+    overflow: scroll;
     @include flex(4);
     height: 100%;
     background-color: #F7FFF6;
     list-style: none;
+    .add-item-button {
+        height: 100px;
+        width: 80px;
+        background-color: white;
+        border-radius: 5px;
+        color: #0C412B;
+        font-weight: bold;
+        text-align: center;
+    }
 }
 
 .marketplace ul{

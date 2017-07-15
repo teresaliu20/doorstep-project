@@ -9,9 +9,8 @@ class Marketplace extends React.Component {
         console.log('ITEM', this.props.items);
         return (
           <div className="marketplace">
-            <div>
-              <h3>Items</h3>
-            </div>
+            <h2>Items</h2>
+            <div className="add-item-button">Add item</div>
             <ul>
               {
                 this.props.items.map((item, index) =>
