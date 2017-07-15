@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Navbar from '../components/Navbar';
+import PropTypes from 'prop-types';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -14,7 +15,7 @@ class Profile extends React.Component {
         };
     }
     componentDidMount() {
-        fetch('http://localhost:3000/api/profile/' + '59695a86f36d28739db80b8a', {
+        fetch('http://localhost:3000/api/profile/' + this.props.match.params.id, {
             method: 'GET',
             headers: {
                 "Content-Type": "text/html"
@@ -36,7 +37,7 @@ class Profile extends React.Component {
         });
     }
     render() {
-        console.log("STATE NEW", this.state);
+        console.log("STATE in profile", this.state);
         return (
             <div>
                 <Navbar />
@@ -53,6 +54,7 @@ class Profile extends React.Component {
 }
 
 Profile.propTypes = {
+    match: PropTypes.object
     // responses: PropTypes.array,
     // onResponseClick: PropTypes.func
 };

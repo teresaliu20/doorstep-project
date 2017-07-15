@@ -4,14 +4,15 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import CommunityPage from '../components/CommunityPage';
 import mainContainer from '../assets/stylesheets/mainContainer.scss';
+import { BrowserRouter } from 'react-router-dom';
 
 class AppContainer extends React.Component {
     render() {
         console.log("STATE NEW", this.state);
         return (
-            <div>
-                    <CommunityPage className="main-container"/>
-            </div>
+            <BrowserRouter>
+                <CommunityPage className="main-container"/>
+            </BrowserRouter>
         );
     }
 }
