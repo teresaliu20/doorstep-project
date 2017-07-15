@@ -8,8 +8,8 @@ class Navbar extends React.Component {
     render() {
         return (
             <div className="navbar">
-                <img src="https://image.flaticon.com/icons/png/512/343/343647.png"/>
-                <h1>Doorstep</h1>
+                <img src="/img/logo1x.png"/>
+                <h2>Doorstep</h2>
                 <div>
                   <button className="profile-button">Profile</button>
                   <Link className="dashboard-button" to="/communities">Dashboard</Link>

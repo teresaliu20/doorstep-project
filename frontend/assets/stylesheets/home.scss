@@ -1,11 +1,73 @@
+@import "colors";
 
-.home{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.main-page {
+    overflow: scroll;
 }
 
-.communities-link{
-  color: #07080B;
+.home{
+    position: relative;
+    /* The image used */
+    background-image: linear-gradient(0deg,rgba(10,10,10,0.3),rgba(0,0,0,0.3)),url('/img/door.png');
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 94vh;
+    text-align: center;
+}
+
+.center-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    img {
+        height: 200px;
+    }
+    h1 {
+        font-size: 72px;
+        margin-bottom: 60px;
+        color: white;
+        font-weight: 400;
+    }
+    .communities-link{
+        background-color: rgba(255,255,255,0.7);
+        color: #757333;
+        font-size: 22px;
+        border-radius: 20px;
+        padding: 20px 40px;
+        transition: 1s;
+        &:hover {
+        background-color: white;
+        }
+    }
+}
+
+
+.about {
+    text-align: center;
+    padding: 50px 30vh;
+    h1 {
+        font-weight: 200;
+    }
+    p {
+        font-size: 22px;
+    }
+}
+
+.footer {
+    background-color: $darkest-blue;
+    text-align: center;
+    padding: 50px 30vh;
+    color: white;
+    p {
+        font-size: 18px;
+    }
+    .footer-info {
+        margin-bottom: 50vh;
+    }
 }

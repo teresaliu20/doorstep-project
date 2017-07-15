@@ -6,37 +6,24 @@
     float: left;
     height: 100%;
     width: 75%;
-    border: 1px solid black;
     background-color: white;
-    list-style: none;
-    @include flexbox()
-    @include flex-flow(row-wrap)
     .add-item-button {
-        height: 100px;
-        width: 80px;
-        background-color: $light-beige;
+        color: white;
+        background-color: $sky-blue;
+        margin-left: 50px;
+        width: 150px;
+        padding: 20px;
         border-radius: 5px;
-        color: #0C412B;
-        font-weight: bold;
         text-align: center;
+        margin: 20px;
+        font-size: 18px;
     }
-    .item-div {
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        float: left;
-        position: relative;
-        margin: 0;
-        padding: 0;
-        @include flex(1);
-        background-color: white;
-        img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-
-        }
-        .item-info {
-            padding: 10px;
-        }
+    h2 {
+        margin-left: 50px;
+    }
+    .items {
+        @include flexbox();
+        @include justify-content(center);
     }
 
 }

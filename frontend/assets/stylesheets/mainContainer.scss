@@ -2,7 +2,6 @@
 @import "colors";
 
 body {
-    overflow: hidden;
     font-family: 'Montserrat', sans-serif;
     h1 {
         font-weight: 400;
@@ -13,12 +12,10 @@ body {
     overflow: hidden;
     height: 94vh;
     width: 100vw;
-    border: 1px solid black;
     position: relative;
     .flex {
         float: left;
         width: 80%;
         height: 100%;
-        border: 1px solid blue;
     }
 }

@@ -26,14 +26,12 @@ class Item extends React.Component {
 
     render() {
         return(
-          <li className="item" onClick={this.open}>
             <div className="item-div">
               <div className="img-wrapper"><img src={this.props.item.imgURL} alt={this.props.item.name}/></div>
               <div className="item-info">
                 <h3>{this.props.item.name}</h3>
                 <h4>{"Giver: " + this.props.item.owner.fName + " " + this.props.item.owner.lName}</h4>
               </div>
-            </div>
               <Modal
                 show={this.state.showModal}
                 onHide={this.close}>
@@ -50,7 +48,7 @@ class Item extends React.Component {
                   <Button onClick={this.close}>Close</Button>
                 </Modal.Footer>
               </Modal>
-          </li>
+            </div>
         );
     }
 }

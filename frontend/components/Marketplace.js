@@ -11,6 +11,7 @@ class Marketplace extends React.Component {
           <div className="marketplace">
             <h2>Items</h2>
             <div className="add-item-button">Add item</div>
+            <div className="items">
               {
                 this.props.items.map((item, index) =>
                 <Item item={item}
@@ -18,6 +19,7 @@ class Marketplace extends React.Component {
                   // onItemClick={onItemClick}
                 />)
               }
+              </div>
           </div>
         );
     }
