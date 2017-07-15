@@ -19,16 +19,13 @@ class AppContainer extends React.Component {
         };
     }
     componentDidMount() {
-        fetch('localhost:3000/api/community/' + '59697d037f49969cba8f2df3', {
+        fetch('http://localhost:3000/api/community/' + '59697d037f49969cba8f2df3', {
             method: 'GET',
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "text/html"
             }
         })
-        .then((response) => {
-            console.log(response);
-            response.json();
-        })
+        .then((response) => response.json())
         .then((responseJson) => {
             console.log('json', responseJson);
             this.setState({
@@ -45,6 +42,7 @@ class AppContainer extends React.Component {
         });
     }
     render() {
+        console.log("STATE NEW", this.state);
         return (
             <div>
                 <Navbar />
@@ -60,12 +58,22 @@ class AppContainer extends React.Component {
 
 AppContainer.propTypes = {
     responses: PropTypes.array,
+    // name: PropTypes.string,
+    // description: PropTypes.string,
+    // users: PropTypes.array,
+    // items: PropTypes.array,
+    // requests: PropTypes.array,
     onResponseClick: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
     return {
         responses: state.responses
+        // name: state.name,
+        // description: state.description,
+        // users: state.users,
+        // items: state.items,
+        // requests: state.requests
     };
 };
 

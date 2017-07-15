@@ -6,6 +6,7 @@ import styles from '../assets/stylesheets/marketplace.scss';
 
 class Marketplace extends React.Component {
     render() {
+        console.log('ITEM', this.props.items);
         return (
           <div className="marketplace">
             <h3>Items</h3>
