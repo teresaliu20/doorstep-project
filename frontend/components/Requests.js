@@ -2,6 +2,7 @@ import React from 'react';
 import Request from './Request';
 import PropTypes from 'prop-types';
 import styles from '../assets/stylesheets/requests.scss';
+import {BrowserRouter, Link} from 'react-router-dom';
 // import requests from '../requests.js';
 
 class Requests extends React.Component {
@@ -10,7 +11,9 @@ class Requests extends React.Component {
         return (
           <div className="requests">
             <h2>Requests</h2>
-            <a button href="#" className="add-request-button">Make a request</a>
+            <BrowserRouter>
+                <Link to="/" className="add-request-button">Make a request</Link>
+            </BrowserRouter>
             <div>
                 {
                     this.props.requests.map((request, index) =>
