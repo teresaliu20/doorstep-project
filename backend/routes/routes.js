@@ -154,7 +154,6 @@ router.post('/create-community', (req, res) => {
     })
 })
 
-// tl <3 
 // Get all the communities
 router.get('/communities', (req, res) => {
     Community.find({})
