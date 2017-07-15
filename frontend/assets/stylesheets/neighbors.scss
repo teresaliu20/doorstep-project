@@ -3,33 +3,39 @@
 
 .neighbors {
   overflow: scroll;
-  height: 200px;
+  @include flex(3);
+  height: 100%;
+  width: 200px;
   text-align: center;
   .side-bar {
     float: left;
     height: 100%;
-    width: 20%;
+    width: 70px;
     background-color: $darkest-blue;
   }
   .neighbors-bar {
+    @include flexbox();
+    @include flex-direction(column);
+    @include align-items(center);
+  
     float: left;
     height: 100%;
-    width: 80%;
-    background: red; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(bottom, $darker-blue , yellow); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(top, $darker-blue, yellow); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(top, $darker-blue, yellow); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(top, $darker-blue , yellow); /* Standard syntax */
+    background: $darker-blue; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(bottom, $gradient-dark , $gradient-light); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(top, $gradient-dark, $gradient-light); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(top, $gradient-dark, $gradient-light); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(top, $gradient-dark, $gradient-light); /* Standard syntax */
     h2 {
       color: white;
       font-size: 24px;
     }
     .add-neighbor-button {
-      // width: 96%;
-      // background-color: #DDFFD5;
-      // border-radius: 5px;
-      // color: #0C412B;
-      // font-weight: bold;
+      height: 60px;
+      width: 60px;
+      content: "+";
+      background-color: $salmon;
+      border-radius: 50%;
+      color: white;
     }
   }
 }

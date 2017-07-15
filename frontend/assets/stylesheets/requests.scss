@@ -2,24 +2,28 @@
 @import "colors";
 
 .requests {
+    @include flexbox();
+    @include flex-direction(column);
+    @include align-items(center);
+
     overflow: scroll;
     @include flex(1);
     height: 100%;
-    background-color: #DDFFD5;
+    width: 100%;
+    background-color: $beige;
     text-align: center;
     padding: 10px;
     h2 {
-        color: #0C412B;
+        color: $darker-blue;
         font-size: 24px;
         margin: 10px;
     }
     .add-request-button {
-        width: 96%;
-        background-color: white;
-        border-radius: 5px;
-        color: #0C412B;
-        font-weight: bold;
-        padding: 10px 5px;
-        margin: 10px 0px;
+        height: 60px;
+        width: 60px;
+        content: "+";
+        background-color: $dark-blue;
+        border-radius: 50%;
+        color: white;
     }
 }

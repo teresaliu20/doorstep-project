@@ -1,7 +1,16 @@
 @import "flexbox";
 @import "colors";
 
+body {
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    h1 {
+        font-weight: 400;
+    }
+}
+
 .main-container {
-    height: 90vh;
-    background-color: blue;
+    overflow: hidden;
+    height: 94vh;
+    @include flexbox();
 }
