@@ -13,6 +13,7 @@ class AppContainer extends React.Component {
     render() {
         return (
           <BrowserRouter>
+            {/* <h5><Link to="/community/59697d037f49969cba8f2df3">GF Community</Link></h5> */}
             <div>
               <Route exact={true} path="/communities" component={Dashboard}/>
               <Route path="/" component={CommunityPage}/>
