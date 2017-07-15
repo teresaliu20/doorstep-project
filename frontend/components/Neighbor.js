@@ -13,7 +13,6 @@ class Neighbor extends React.Component {
                         <span><img src={this.props.user.imgURL} alt="" height="40"/></span>
                         <span>{this.props.user.fName} {this.props.user.lName}</span>
                     </Link>
-                    <Route exact={true} path={'profile/:userId'} component={Profile}/>
                 </div>
         );
     }
