@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 // import PropTypes from 'prop-types';
-import styles from '../assets/stylesheets/navbar.scss'
+import styles from '../assets/stylesheets/navbar.scss';
+import { Link } from 'react-router-dom';
 
 class Navbar extends React.Component {
     render() {
@@ -11,6 +12,7 @@ class Navbar extends React.Component {
                 <h1>Doorstep</h1>
                 <div>
                   <button className="profile-button">Profile</button>
+                  <Link className="profile-button" to="/communities">View all communities</Link>
                 </div>
             </div>
         );

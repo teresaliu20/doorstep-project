@@ -20,6 +20,7 @@ class CommunityPage extends React.Component {
         };
     }
     componentDidMount() {
+        console.log('match', this.props.match);
         fetch('http://localhost:3000/api/community/' + this.props.match.params.communityId, {
             method: 'GET',
             headers: {
@@ -43,7 +44,7 @@ class CommunityPage extends React.Component {
         });
     }
     render() {
-        console.log("STATE NEW", this.state);
+        console.log("STATE community page", this.state);
         return (
             <div>
                 <Navbar />

@@ -31,15 +31,15 @@ class Dashboard extends React.Component {
         });
     }
     render() {
-        console.log("STATE NEW", this.state);
+        console.log("STATE dashboard", this.state);
         return (
             <div>
                 <Navbar />
                 <div className="">
                   <ul>
-                    {this.state.communities.map((community, index) => {
-                        <EachCommunity community={community} key={index}/>
-                    })}
+                    {this.state.communities.map((community, index) =>
+                        <Door community={community} key={index}/>
+                    )}
                   </ul>
                 </div>
             </div>
