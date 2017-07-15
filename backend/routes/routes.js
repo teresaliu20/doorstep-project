@@ -8,7 +8,7 @@ var Request = models.Request;
 
 // Get the community object as data for the community page
 router.get('/community/:id', (req, res) => {
-    
+
     // Find the community by the given id and populate arrays of Object ids
     Community.findById(req.params.id)
     .populate('users')
@@ -152,6 +152,26 @@ router.post('/create-community', (req, res) => {
             res.json({success: true, response: community})
         }
     })
+})
+
+// tl <3 
+// Get all the communities
+router.get('/communities', (req, res) => {
+    Community.find({})
+    .then((communities) => {
+        if (!communities) {
+            console.log("No communities exist");
+        }
+        else {
+            // Send the community json object
+            console.log("Successfully sent community data");
+            return res.json(communities);
+        }
+    })
+    .catch(err => {
+        console.log(err);
+        return res.json({failure: "database error"});
+    });
 })
 
 module.exports = router;
