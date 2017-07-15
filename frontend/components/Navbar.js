@@ -11,7 +11,6 @@ class Navbar extends React.Component {
                 <h1>Doorstep</h1>
                 <div>
                   <button className="profile-button">Profile</button>
-                  <button className="dashboard-button">Dashboard</button>
                 </div>
             </div>
         );

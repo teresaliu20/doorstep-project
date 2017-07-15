@@ -1,22 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../assets/stylesheets/neighbor.scss';
-import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-class EachCommunity extends React.Component {
+class Door extends React.Component {
     render() {
         return (
             <div className="">
               <li>
-                <span>{this.props.community.name}</span>
+                <Link to={"/community/" + this.props.community._id}>{this.props.community.name}</Link>
               </li>
             </div>
         );
     }
 }
 
-EachCommunity.propTypes = ({
+Door.propTypes = ({
     community: PropTypes.object
 });
 
-export default EachCommunity;
+export default Door;

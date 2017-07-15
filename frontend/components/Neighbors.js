@@ -12,9 +12,7 @@ class Neighbors extends React.Component {
                 <div className="side-bar"></div>
                 <div className="neighbors-bar">
                     <h2>Neighbors</h2>
-                    <BrowserRouter>
-                        <Link to="#" className="add-neighbor-button">Add a friend</Link>
-                    </BrowserRouter>
+                    <Link to="#" className="add-neighbor-button">Add a friend</Link>
                     <div>
                  {
                      this.props.users.map(user =>
