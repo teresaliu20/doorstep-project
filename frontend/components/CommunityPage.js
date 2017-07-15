@@ -17,15 +17,15 @@ class CommunityPage extends React.Component {
             users: [],
             items: [],
             requests: [],
-            community: null
+            community: {}
         };
     }
-    componentDidMount() {
+    componentWillMount() {
         console.log('match', this.props.match);
         fetch('http://localhost:3000/api/community/' + this.props.match.params.communityId, {
             method: 'GET',
             headers: {
-                "Content-Type": "text/html"
+                "Content-Type": "application/json"
             }
         })
         .then((response) => response.json())
@@ -39,7 +39,6 @@ class CommunityPage extends React.Component {
                 requests: responseJson.requests,
                 community: responseJson
             });
-            return;
         })
         .catch((err) => {
             console.log('error', err);
@@ -53,7 +52,7 @@ class CommunityPage extends React.Component {
                 <div className="main-container">
                     <Neighbors users={this.state.users} community={this.state.community} />
                     <div className="flex">
-                        <Marketplace items={this.state.items}/>
+                        <Marketplace community={this.state.community} items={this.state.items}/>
                         <Requests requests={this.state.requests} onResponseClick={this.props.onResponseClick}/>
                     </div>
                 </div>
