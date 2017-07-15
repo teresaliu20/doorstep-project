@@ -68,4 +68,9 @@ var Item = mongoose.model('Item', itemSchema);
 var Community = mongoose.model('Community', communitySchema);
 var Request = mongoose.model('Request', requestSchema);
 
-export { User, Item, Community, Request };
+module.exports = {
+    User: User,
+    Item: Item,
+    Community: Community,
+    Request: Request
+};

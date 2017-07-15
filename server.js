@@ -2,12 +2,17 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
-const api = require('./backend/routes');
+const api = require('./backend/routes/routes');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+
+
 
 var connect = process.env.MONGODB_URI || require('./models/connect');
 mongoose.connect(connect);
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (request, response) => {
