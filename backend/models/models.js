@@ -7,15 +7,19 @@ var userSchema = mongoose.Schema({
     },
     password: {
         type: String,
+        required: true
     },
     fName: {
         type: String,
+        required: true
     },
     lName: {
         type: String,
+        required: true
     },
     imgURL: {
         type: String,
+        required: true
     },
 });
 
@@ -29,10 +33,12 @@ var itemSchema = mongoose.Schema({
     // },
     imgURL: {
         type: String,
+        required: true
     },
     owner: {
         type: mongoose.Schema.ObjectId,
         ref: 'User',
+        required: true,
     },
 });
 
@@ -42,7 +48,8 @@ var communitySchema = mongoose.Schema({
         required: true,
     },
     description: {
-        type: String
+        type: String,
+        required: true
     },
     users: [{
         type: mongoose.Schema.ObjectId,
@@ -50,7 +57,7 @@ var communitySchema = mongoose.Schema({
     }],
     items: [{
         type: mongoose.Schema.ObjectId,
-        ref: 'Item'
+        ref: 'Item',
     }],
     requests: [{
         type: mongoose.Schema.ObjectId,
@@ -61,10 +68,12 @@ var communitySchema = mongoose.Schema({
 var requestSchema = mongoose.Schema({
     owner: {
         type: mongoose.Schema.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        required: true
     },
     text: {
         type: String
+        required: true
     }
 });
 
