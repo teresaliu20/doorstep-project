@@ -6,8 +6,6 @@ const api = require('./backend/routes/routes');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-
-
 var connect = process.env.MONGODB_URI || require('./models/connect');
 mongoose.connect(connect);
 
