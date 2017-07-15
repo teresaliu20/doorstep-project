@@ -58,22 +58,12 @@ class AppContainer extends React.Component {
 
 AppContainer.propTypes = {
     responses: PropTypes.array,
-    // name: PropTypes.string,
-    // description: PropTypes.string,
-    // users: PropTypes.array,
-    // items: PropTypes.array,
-    // requests: PropTypes.array,
     onResponseClick: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
     return {
         responses: state.responses
-        // name: state.name,
-        // description: state.description,
-        // users: state.users,
-        // items: state.items,
-        // requests: state.requests
     };
 };
 
