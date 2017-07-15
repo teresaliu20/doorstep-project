@@ -1,6 +1,19 @@
 @import "flexbox";
 @import "colors";
 
+
+.dashboard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $darkest-blue;
+  flex-direction: column;
+}
+
 .boxOfDoors{
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
