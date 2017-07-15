@@ -11,39 +11,30 @@ class Home extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div class="main-page">
                 <Navbar />
                 <div className="home">
-                    {/* {logo} */}
-                    <h2>Welcome to Doorstep!</h2>
-                    <h4><Link className="communities-link" to="/communities">Click here to see all communities!</Link></h4>
+                    <div className="center-info">
+                    <img src="/img/logo1x.png"/>
+                    <h1>Doorstep</h1>
+                    <h4><Link className="communities-link" to="/communities">Explore Communities</Link></h4>
+                    </div>
+                </div>
+                <div className="about">
+                    <h1>About us</h1>
+                    <p>One person's doorstep is another person's treasures. Reduce waste of food,
+                    clothing, and any items not necessary to you anymore and give to those you wish to 
+                    share with. Build communities, give and get items, eliminate wastefulness. One requirement,
+                    everything is free.</p>
+                </div>
+                <div className="footer">
+                    <h3>Horizons Hackathon 2017</h3>
+                    <p className="footer-info">Created by Demilade Adeboye, Minh To, and Teresa Liu</p>
+                    <p> &copy; Squad 2017 </p>
                 </div>
             </div>
         );
     }
 }
-
-// Home.propTypes = {
-//     responses: PropTypes.array,
-//     onResponseClick: PropTypes.func
-// };
-//
-// const mapStateToProps = (state) => {
-//     return {
-//         responses: state.responses
-//     };
-// };
-//
-// const mapDispatchToProps = (dispatch) => {
-//   //  someDispProp: /* some function that dispatches an action */
-//     return {
-//         onResponseClick: (receiver, response) => dispatch({type: 'RESPONSE_TO_REQUEST', receiver, response})
-//     };
-// };
-//
-// export default connect(
-//     mapStateToProps,
-//     mapDispatchToProps
-// )(Home);
 
 export default Home;

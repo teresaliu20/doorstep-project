@@ -9,7 +9,7 @@ class Navbar extends React.Component {
         return (
             <div className="navbar">
                 <img src="/img/logo1x.png"/>
-                <h1>Doorstep</h1>
+                <h2>Doorstep</h2>
                 <div>
                   <button className="profile-button">Profile</button>
                   <Link className="dashboard-button" to="/communities">Dashboard</Link>
