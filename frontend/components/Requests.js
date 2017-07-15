@@ -7,12 +7,12 @@ import {BrowserRouter, Link} from 'react-router-dom';
 
 class Requests extends React.Component {
     render() {
-        console.log(this.props.requests);
+        console.log("REQUESTS", this.props.requests);
         return (
           <div className="requests">
             <h2>Requests</h2>
             <BrowserRouter>
-                <Link to="/" className="add-request-button">Make a request</Link>
+                <Link to="/" className="add-request-button">&plus</Link>
             </BrowserRouter>
             <div>
                 {

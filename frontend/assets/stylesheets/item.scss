@@ -1,0 +1,21 @@
+@import "flexbox";
+@import "colors";
+
+.item-div {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 0;
+    margin: 10px;
+    @include flex(1);
+    width: 30%;
+    height: 500px;
+    display: inline-block;
+    img {
+        width: 100%;
+        height: 300px;
+        margin-bottom: 10px;
+
+    }
+    .item-info {
+        padding: 10px;
+    }
+}

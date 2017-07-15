@@ -42,7 +42,7 @@ class Neighbors extends React.Component {
                 <div className="side-bar"></div>
                 <div className="neighbors-bar">
                     <h2>Neighbors</h2>
-                    <Button onClick={this.open} className="add-neighbor-button">Add a friend</Button>
+                    <Button onClick={this.open} className="add-neighbor-button">&plus</Button>
                     <Modal show={this.state.showModal} onHide={this.close}>
                       <Modal.Header closeButton>
                         <Modal.Title>Add a neighbor</Modal.Title>
