@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 import styles from '../assets/stylesheets/neighbor.scss';
 import { Button } from 'react-bootstrap';
 
-const Neighbor = ({user}) => {
-    return (
-        <div className="neighbor">
-            <span><img src={user.imgURL} alt="" height="40"/></span>
-            <span>{user.fName} {user.lName}</span>
-        </div>
-    );
-};
+class Neighbor extends React.Component {
+    render() {
+        return (
+            <div className="neighbor">
+                <span><img src={this.props.user.imgURL} alt="" height="40"/></span>
+                <span>{this.props.user.fName} {this.props.user.lName}</span>
+            </div>
+        );
+    }
+}
 
 Neighbor.propTypes = ({
     user: PropTypes.object

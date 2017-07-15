@@ -7,28 +7,60 @@ import Marketplace from '../components/Marketplace';
 import Requests from '../components/Requests';
 import mainContainer from '../assets/stylesheets/mainContainer.scss';
 
-const AppContainer = ({ name, onResponseClick }) => {
-    return (
-        <div>
-            <Navbar />
-            <div className="main-container">
-                <Neighbors />
-                <Marketplace />
-                <Requests onResponseClick={onResponseClick}/>
+class AppContainer extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            description: '',
+            users: [],
+            items: [],
+            requests: []
+        };
+    }
+    componentDidMount() {
+        fetch('localhost:3000/api/community/' + '59697d037f49969cba8f2df3', {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then((response) => response.json())
+        .then((responseJson) => {
+            console.log('json', responseJson);
+            this.setState({
+                name: responseJson.name,
+                description: responseJson.description,
+                users: responseJson.users,
+                items: responseJson.items,
+                requests: responseJson.requests
+            });
+        })
+        .catch((err) => {
+            console.log('error', err);
+        });
+    }
+    render() {
+        return (
+            <div>
+                <Navbar />
+                <div className="main-container">
+                    <Neighbors users={this.state.users}/>
+                    <Marketplace items={this.state.items}/>
+                    <Requests requests={this.state.requests} onResponseClick={this.props.onResponseClick}/>
+                </div>
             </div>
-        </div>
-    );
-};
+        );
+    }
+}
 
 AppContainer.propTypes = {
-    name: PropTypes.string,
     responses: PropTypes.array,
     onResponseClick: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
     return {
-        name: state.name,
         responses: state.responses
     };
 };
