@@ -36,7 +36,7 @@ class Item extends React.Component {
                 aspectRatio="wide"
                 // image={item.url}
                 >
-                  <img src={this.props.item.owner.imgURL} alt={this.props.item.name}/>
+                  <img src={this.props.item.imgURL} alt={this.props.item.name}/>
               </CardMedia>
               <CardTitle
                   title={this.props.item.name}
