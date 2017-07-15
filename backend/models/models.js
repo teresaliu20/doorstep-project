@@ -52,8 +52,19 @@ var communitySchema = mongoose.Schema({
     }
 });
 
+var requestSchema = mongoose.Schema({
+    owner: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User'
+    },
+    text: {
+        type: String
+    },
+})
+
 var User = mongoose.model('User', userSchema);
 var Item = mongoose.model('Item', itemSchema);
 var Community = mongoose.model('Community', communitySchema);
+var Request = mongoose.model('Request', requestSchema);
 
-export { User, Item, Community };
+export { User, Item, Community, Request };
