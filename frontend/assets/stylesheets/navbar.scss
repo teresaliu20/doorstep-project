@@ -2,33 +2,29 @@
 @import "colors";
 
 .navbar {
-    height: 10vh;
-    padding: 10px;
+    height: 6vh;
     color: white;
-    background-color: #3D9348;
+    background-color: $salmon;
     border-radius: 0px;
     margin: 0;
     @include flexbox();
-    @include justify-content(center);
+    @include justify-content(space-between);
     @include align-items(center);
     h1 {
         text-align: center;
-        @include flex(5);
     }
     div {
-        @include flex(1);
     }
     .profile-button {
         border-radius: 5px;
         background-color: white;
-        width: 75px;
+        width: 50px;
         color: black;
         border: none;
-        height: 45px;
+        height: 30px;
         display: inline;
     }
     img {
-        @include flex(1);
-        height: 50px;
+        height: 30px;
     }
 }

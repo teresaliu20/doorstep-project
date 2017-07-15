@@ -5,12 +5,12 @@
     overflow: scroll;
     @include flex(4);
     height: 100%;
-    background-color: #F7FFF6;
+    background-color: white;
     list-style: none;
     .add-item-button {
         height: 100px;
         width: 80px;
-        background-color: white;
+        background-color: $light-beige;
         border-radius: 5px;
         color: #0C412B;
         font-weight: bold;

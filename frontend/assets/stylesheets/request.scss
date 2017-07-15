@@ -1,4 +1,15 @@
-.request{
-  background-color: #A8F4A4;
-  border-radius: 3px;
+@import "colors";
+
+.request {
+    border-radius: 5px;
+    width: 150px;
+    margin: 10px;
+    display: block;
+    text-align: left;
+    background-color: #FFB36A;
+    color: white;
+    img {
+        margin-right: 15px;
+        font-weight: bold;
+    }
 }
