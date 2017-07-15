@@ -16,7 +16,8 @@ class CommunityPage extends React.Component {
             description: '',
             users: [],
             items: [],
-            requests: []
+            requests: [],
+            community: null
         };
     }
     componentDidMount() {
@@ -35,7 +36,8 @@ class CommunityPage extends React.Component {
                 description: responseJson.description,
                 users: responseJson.users,
                 items: responseJson.items,
-                requests: responseJson.requests
+                requests: responseJson.requests,
+                community: responseJson
             });
             return;
         })
@@ -49,7 +51,7 @@ class CommunityPage extends React.Component {
             <div>
                 <Navbar />
                 <div className="main-container">
-                    <Neighbors users={this.state.users}/>
+                    <Neighbors users={this.state.users} community={this.state.community}/>
                     <Marketplace items={this.state.items}/>
                     <Requests requests={this.state.requests} onResponseClick={this.props.onResponseClick}/>
                 </div>
