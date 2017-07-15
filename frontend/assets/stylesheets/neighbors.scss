@@ -5,4 +5,19 @@
     @include flex(1);
     height: 100%;
     background-color: #0C412B;
+    text-align: center;
+    h2 {
+        color: white;
+        font-size: 24px;
+        margin: 10px;
+    }
+    .add-neighbor-button {
+        width: 96%;
+        background-color: #DDFFD5;
+        border-radius: 5px;
+        color: #0C412B;
+        font-weight: bold;
+        padding: 10px 5px;
+        margin: 10px 2%;
+    }
 }
