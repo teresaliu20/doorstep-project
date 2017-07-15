@@ -6,6 +6,12 @@ body {
     h1 {
         font-weight: 400;
     }
+    link {
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: none;
+    }
 }
 
 .main-container {

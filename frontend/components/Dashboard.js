@@ -45,6 +45,7 @@ class Dashboard extends React.Component {
                       <Door community={community} key={index}/>
                     )}
                   </div>
+                  <div onClick={this.open} className="add-neighbor-button"><img src="/img/plus1x.png"/></div>
                 </div>
             </div>
         );

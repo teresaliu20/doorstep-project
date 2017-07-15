@@ -8,13 +8,18 @@
   // @include flex-flow(row-wrap)
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   color: #07080B;
-  border-radius: 5px;
+  border-radius: 35px;
   margin: 30px;
   text-align: center;
-  width: 150px;
-  height: 300px;
-  background-image: linear-gradient(0deg,rgba(10,10,10,0.3),rgba(0,0,0,0.3)),url('/img/doorScreen.png');
-
+  width: 286px;
+  height: 350px;
+  background-image: url('/img/door1x.png');
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  img {
+    height: 120px;
+  }
 }
 
 .doorImg {
