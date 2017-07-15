@@ -47,13 +47,14 @@ class Request extends React.Component {
     }
 
     render() {
+        console.log('request', this.props.request);
         return (
         <div className="request">
             <div onClick={this.open}>
                 <div>
-                    <span><img src={this.findUser(this.props.request.owner.username).imgURL} height="40" alt=""/></span>
+                    <span><img src={this.props.request.owner.imgURL} height="40" alt=""/></span>
                     <div>{this.props.request.text}</div>
-                    <div>{this.findUser(this.props.request.owner.username).fName} {this.findUser(this.props.request.owner.username).lName}</div>
+                    <div>{this.props.request.owner.fName} {this.props.request.owner.lName}</div>
                 </div>
             </div>
             <Modal show={this.state.showModal} onHide={this.close}>

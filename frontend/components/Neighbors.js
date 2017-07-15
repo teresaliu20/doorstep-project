@@ -30,13 +30,26 @@ class Neighbors extends React.Component {
     }
 
     handleSubmit() {
+        fetch('http://localhost:3000/api/add-user/', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                username: this.state.username,
+                communityId: this.props.community._id
+            })
+        })
+        .then(response => response.json())
+        .then(responseJson => {
+            console.log('json', responseJson);
+        })
+        .catch(err => console.log('error', err));
         this.close();
     }
 
-    componentDidMount() {
-        fetch('')
-    }
     render() {
+        console.log('neighbors', this.props.users);
         return (
             <div className="neighbors">
                 <div className="side-bar"></div>
@@ -54,7 +67,7 @@ class Neighbors extends React.Component {
                             <ControlLabel>Enter neighbor's username</ControlLabel>
                             <FormControl
                               type="text"
-                              value={this.state.response}
+                              value={this.state.newNeighborUsername}
                               placeholder="Who is your neighbor?"
                               onChange={(event) => this.handleResponseChange(event)}
                             />
@@ -62,7 +75,7 @@ class Neighbors extends React.Component {
                         </form>
                       </Modal.Body>
                       <Modal.Footer>
-                        <Button bsStyle="primary" onClick={() => this.handleSubmit()}>Send them a response</Button>
+                        <Button bsStyle="primary" onClick={() => this.handleSubmit()}>Add to community</Button>
                       </Modal.Footer>
                   </Modal>
                     <div>
