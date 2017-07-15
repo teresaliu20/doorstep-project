@@ -27,8 +27,8 @@ class Item extends React.Component {
     render() {
         return(
             <div className="item-div">
-              <div className="img-wrapper"><img src={this.props.item.imgURL} alt={this.props.item.name}/></div>
-              <div className="item-info">
+              <div onClick={this.open} className="img-wrapper"><img src={this.props.item.imgURL} alt={this.props.item.name}/></div>
+              <div onClick={this.open} className="item-info">
                 <h3>{this.props.item.name}</h3>
                 <h4>{"Giver: " + this.props.item.owner.fName + " " + this.props.item.owner.lName}</h4>
               </div>
@@ -40,7 +40,7 @@ class Item extends React.Component {
                 </Modal.Header>
                 <Modal.Body>
                   <h5>Want to take {this.props.item.name} from {this.props.item.owner.fName}?</h5>
-                  <Button onClick={this.props.onItemClick}>
+                  <Button onClick={this.close}>
                     Yes, please!
                   </Button>
                 </Modal.Body>
