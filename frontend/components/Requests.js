@@ -9,6 +9,9 @@ class Requests extends React.Component {
         console.log(this.props.requests);
         return (
           <div className="requests">
+            <h2>Requests</h2>
+            <div className="add-request-button">Make a request</div>
+            <div>
                 {
                     this.props.requests.map((request, index) =>
                     <Request
@@ -17,6 +20,7 @@ class Requests extends React.Component {
                         handleResponse={this.props.onResponseClick}
                     />)
                 }
+            </div>
           </div>
         );
     }
