@@ -22,10 +22,10 @@ class Home extends React.Component {
                 </div>
                 <div className="about">
                     <h1>About us</h1>
-                    <p>One person's doorstep is another person's treasures. Reduce waste of food,
-                    clothing, and any items not necessary to you anymore and give to those you wish to 
-                    share with. Build communities, give and get items, eliminate wastefulness. One requirement,
-                    everything is free.</p>
+                    <p>Get one step closer to a stronger community. Reduce waste of food,
+                    clothing, and any items not necessary to you anymore and share with those you care about.
+                    It's simple: build communities, give and get items, and eliminate wastefulness.
+                    Our only requirement: everything is free.</p>
                 </div>
                 <div className="footer">
                     <h3>Horizons Hackathon 2017</h3>

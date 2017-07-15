@@ -1,5 +1,5 @@
 # Project: Doorstep
-Collaborators: Demi, Teresa, Minh
+Collaborators: Minh To, Teresa Liu, Demilade Adeboye
 
 ## About Doorstep
 Welcome to Doorstep, a platform where community members can share and request free food or clothing items from each other in an attempt to reduce waste. Doorstep provides its community members an open marketplace while encouraging community engagement.
