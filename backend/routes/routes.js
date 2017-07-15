@@ -8,7 +8,7 @@ var Request = models.Request;
 
 // Get the community object as data for the community page
 router.get('/community/:id', (req, res) => {
-    
+
     // Find the community by the given id and populate arrays of Object ids
     Community.findById(req.params.id)
     .populate('users')
@@ -21,12 +21,14 @@ router.get('/community/:id', (req, res) => {
         else {
             // Send the community json object
             console.log("Successfully sent community data");
-            return res.json(community);
+            res.json(community);
+            return;
         }
     })
     .catch(err => {
         console.log(err);
-        return res.json({failure: "database error"});
+        res.json({failure: "database error"});
+        return;
     });
 });
 
@@ -51,7 +53,7 @@ router.post('/add-user', (req, res) => {
         newUsers.push(userId);
         community.update({users: newUsers})
         .then((result) => {
-            community.users = newUsers;   
+            community.users = newUsers;
             // Send back the community json object with the updated array
             res.json({success: true, response: community})
         })
