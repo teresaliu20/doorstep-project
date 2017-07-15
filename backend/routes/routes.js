@@ -27,7 +27,7 @@ router.get('/community/:id', (req, res) => {
                 Request.populate(community.requests, {path: 'owner'})
                 .then((result) => {
                     return res.json(community);
-                }); 
+                });
             });
         }
     })
@@ -182,6 +182,22 @@ router.get('/communities', (req, res) => {
         console.log(err);
         return res.json({failure: "database error"});
     });
-})
+});
+
+//  get profile page
+router.get('/profile/:profileId', (req, res) => {
+    var profile = req.params.profileId;
+    User.findById(profile)
+    .then(userProfile => {
+        if (!userProfile) {
+            res.json({failure: "Profile not found!"});
+        } else {
+            res.json({success: true, user: userProfile});
+        }
+    })
+    .catch( err =>
+        res.json({failure: "database error", error: err })
+    );
+});
 
 module.exports = router;
