@@ -44,12 +44,13 @@ var communitySchema = mongoose.Schema({
     description: {
         type: String
     },
-    users: {
-        type: Array,
-    },
-    items: {
-        type: Array,
-    }
+    users: [{
+        type: mongoose.Schema.ObjectId,
+        ref: 'User'
+    }],
+    items: [{
+        type: mongoose.Schema.ObjectId,
+    }]
 });
 
 var requestSchema = mongoose.Schema({
