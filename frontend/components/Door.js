@@ -7,7 +7,9 @@ class Door extends React.Component {
     render() {
         return (
             <div className="door">
-                <Link to={"/community/" + this.props.community._id}>{this.props.community.name}</Link>
+              <div className="doorImg">
+                <Link to={"/community/" + this.props.community._id} className="doorName">{this.props.community.name}</Link>
+              </div>
             </div>
         );
     }
