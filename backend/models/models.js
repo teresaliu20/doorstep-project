@@ -60,8 +60,8 @@ var requestSchema = mongoose.Schema({
     },
     text: {
         type: String
-    },
-})
+    }
+});
 
 var User = mongoose.model('User', userSchema);
 var Item = mongoose.model('Item', itemSchema);
