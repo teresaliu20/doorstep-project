@@ -48,7 +48,8 @@ class Profile extends React.Component {
                   <h1>{this.state.fName} {this.state.lName}</h1>
                   <h3>Username: {this.state.username}</h3>
                   <div>
-                    <h4>Communities {this.state.fName} is a part of:</h4>
+                    <label>About: {this.state}</label>
+                    <div>{this.state.aboutMe}</div>
                   </div>
                 </div>
             </div>

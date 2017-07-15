@@ -47,6 +47,7 @@ router.post('/add-user', (req, res) => {
         Community.findById(communityId)
         .then(community => {
             // If the user already exists in the community
+            console.log('found user', user);
             if (community.users.indexOf(user._id) !== -1) {
                 console.log("Error: user already exists");
                 return res.json({success: true, response: community});

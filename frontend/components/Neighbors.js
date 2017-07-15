@@ -36,20 +36,19 @@ class Neighbors extends React.Component {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                username: this.state.username,
+                username: this.state.newNeighborUsername,
                 communityId: this.props.community._id
             })
         })
         .then(response => response.json())
         .then(responseJson => {
-            console.log('json', responseJson);
+            console.log('json neighbors', responseJson);
         })
         .catch(err => console.log('error', err));
         this.close();
     }
 
     render() {
-        console.log('neighbors', this.props.users);
         return (
             <div className="neighbors">
                 <div className="side-bar"></div>
