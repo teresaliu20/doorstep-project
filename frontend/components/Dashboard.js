@@ -36,11 +36,9 @@ class Dashboard extends React.Component {
             <div>
                 <Navbar />
                 <div className="">
-                  <ul>
                     {this.state.communities.map((community, index) =>
                         <Door community={community} key={index}/>
                     )}
-                  </ul>
                 </div>
             </div>
         );
