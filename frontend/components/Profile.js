@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Navbar from '../components/Navbar';
 import PropTypes from 'prop-types';
+import styles from '../assets/stylesheets/profile.scss';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -42,11 +43,13 @@ class Profile extends React.Component {
         return (
             <div>
                 <Navbar />
-                <div className="">
-                  <h2>{this.state.username}</h2>
-                  <img src={this.state.imgURL} alt={this.state.username}/>
+                <div className="profile">
+                  <img className="prof-pic" src={this.state.imgURL} height="500" alt={this.state.username}/>
+                  <h1>{this.state.fName} {this.state.lName}</h1>
+                  <h3>Username: {this.state.username}</h3>
                   <div>
-                    <h4>Communities {this.state.fName} is a part of:</h4>
+                    <label>About: {this.state}</label>
+                    <div>{this.state.aboutMe}</div>
                   </div>
                 </div>
             </div>

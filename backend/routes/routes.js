@@ -43,33 +43,31 @@ router.get('/community/:id', (req, res) => {
 router.post('/add-user', (req, res) => {
 
     var communityId = req.body.communityId;
-    var userId = req.body.userId;
-
-    // Find the community by the given id
-    Community.findById(communityId)
-    .then(community => {
-        console.log(community);
-
-        // If the user already exists in the community
-        if (community.users.indexOf(userId) !== -1) {
-            console.log("Error: user already exists")
-            return res.json({success: true, response: community});
-        }
-        // Push the user id into the community users array then update in database
-        var newUsers = [...community.users];
-        newUsers.push(userId);
-        community.update({users: newUsers})
-        .then((result) => {
-            community.users = newUsers;
-            // Send back the community json object with the updated array
-            res.json({success: true, response: community})
+    User.findOne({username: req.body.username}, (err, user) => {
+        Community.findById(communityId)
+        .then(community => {
+            // If the user already exists in the community
+            console.log('found user', user);
+            if (community.users.indexOf(user._id) !== -1) {
+                console.log("Error: user already exists");
+                return res.json({success: true, response: community});
+            }
+            // Push the user id into the community users array then update in database
+            var newUsers = [...community.users];
+            newUsers.push(user._id);
+            community.update({users: newUsers})
+            .then((result) => {
+                community.users = newUsers;
+                // Send back the community json object with the updated array
+                res.json({success: true, response: community});
+            });
         })
-    })
-    .catch(err => {
-        console.log(err);
-        return res.json({failure: "database error"});
+        .catch(error => {
+            console.log(error);
+            return res.json({failure: "database error"});
+        });
     });
-})
+});
 
 // Create a new item within the community, update both commmunity and item sections of database
 router.post('/create-item', (req, res) => {

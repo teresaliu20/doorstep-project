@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import Navbar from '../components/Navbar';
 import Door from './Door';
 
+import styles from '../assets/stylesheets/dashboard.scss';
+
+
 class Dashboard extends React.Component {
     constructor(props) {
         super(props);
@@ -35,12 +38,10 @@ class Dashboard extends React.Component {
         return (
             <div>
                 <Navbar />
-                <div className="">
-                  <ul>
+                <div className="boxOfDoors">
                     {this.state.communities.map((community, index) =>
                         <Door community={community} key={index}/>
                     )}
-                  </ul>
                 </div>
             </div>
         );
