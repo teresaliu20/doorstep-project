@@ -73,6 +73,7 @@ class Neighbors extends React.Component {
     }
 
     render() {
+        console.log('community', this.props.community);
         return (
             <div className="neighbors">
                 <div className="side-bar"></div>
