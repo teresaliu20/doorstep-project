@@ -7,6 +7,7 @@ import Profile from './Profile';
 
 class Neighbor extends React.Component {
     render() {
+        console.log('user', this.props.user);
         return (
             <div>
                 <Link className="neighbor" to={'/profile/' + this.props.user._id}>

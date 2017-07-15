@@ -30,7 +30,7 @@ class CommunityPage extends React.Component {
         })
         .then((response) => response.json())
         .then((responseJson) => {
-            console.log('json', responseJson);
+            console.log('json response', responseJson);
             this.setState({
                 name: responseJson.name,
                 description: responseJson.description,

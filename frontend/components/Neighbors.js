@@ -10,13 +10,37 @@ class Neighbors extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            newNeighborUsername: ''
+            newNeighborUsername: '',
+            users: [],
+            community: null
         };
         this.close = this.close.bind(this);
         this.open = this.open.bind(this);
         this.handleResponseChange = this.handleResponseChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    // componentDidMount() {
+    //     console.log('id', this.props.community._id);
+    //     fetch('http://localhost:3000/api/community/' + this.props.community._id, {
+    //         method: 'GET',
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         }
+    //     })
+    //     .then((response) => response.json())
+    //     .then((responseJson) => {
+    //         console.log('json neighbors', responseJson);
+    //         this.setState({
+    //             users: responseJson.users,
+    //             community: responseJson
+    //         });
+    //         return;
+    //     })
+    //     .catch((err) => {
+    //         console.log('error', err);
+    //     });
+    // }
     close() {
         this.setState({ showModal: false });
     }

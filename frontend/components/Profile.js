@@ -15,22 +15,23 @@ class Profile extends React.Component {
             imgURL: '',
         };
     }
-    componentDidMount() {
+    componentWillMount() {
         console.log('MATCH', this.props);
         fetch('http://localhost:3000/api/profile/' + this.props.match.params.userId, {
             method: 'GET',
             headers: {
-                "Content-Type": "text/html"
+                "Content-Type": "application/json"
             }
         })
         .then((response) => response.json())
         .then((responseJson) => {
-            console.log('json', responseJson);
+            console.log('json profile', responseJson);
             this.setState({
                 username: responseJson.user.username,
                 fName: responseJson.user.fName,
                 lName: responseJson.user.lName,
                 imgURL: responseJson.user.imgURL,
+                aboutMe: responseJson.user.aboutMe
             });
             return;
         })
@@ -48,7 +49,7 @@ class Profile extends React.Component {
                   <h1>{this.state.fName} {this.state.lName}</h1>
                   <h3>Username: {this.state.username}</h3>
                   <div>
-                    <label>About: {this.state}</label>
+                    <label>About:</label>
                     <div>{this.state.aboutMe}</div>
                   </div>
                 </div>
