@@ -53,7 +53,7 @@ class Item extends React.Component {
                   <Modal.Title>Knock knock!</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                  <h5>Want to take {this.props.item.name} from {this.props.item.owner.fName}?</h5>
+                  <h5>Want to take {this.props.item.name} from {this.props.item.owner.fName}, please?</h5>
                   <Button onClick={this.props.onItemClick}>
                     Send them a message!
                   </Button>

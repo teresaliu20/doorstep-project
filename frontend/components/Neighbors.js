@@ -9,7 +9,7 @@ class Neighbors extends React.Component {
         return (
             <div className="neighbors">
                 <h2>Neighbors</h2>
-                <div className="add-neighbor-button">Add a friend</div>
+                <div className="add-neighbor-button">Add a neighbor</div>
                 <div>
              {
                  this.props.users.map(user =>
