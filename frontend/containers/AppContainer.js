@@ -25,7 +25,10 @@ class AppContainer extends React.Component {
                 "Content-Type": "application/json"
             }
         })
-        .then((response) => response.json())
+        .then((response) => {
+            console.log(response);
+            response.json();
+        })
         .then((responseJson) => {
             console.log('json', responseJson);
             this.setState({
@@ -35,6 +38,7 @@ class AppContainer extends React.Component {
                 items: responseJson.items,
                 requests: responseJson.requests
             });
+            return;
         })
         .catch((err) => {
             console.log('error', err);
